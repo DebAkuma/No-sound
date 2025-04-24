@@ -1,0 +1,30 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://cu7mhmw2uu3er"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/Sky.gdshader" id="1_f3wcw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2hd5"]
+shader = ExtResource("1_f3wcw")
+shader_parameter/star_height = 20.0
+shader_parameter/star_blend = 0.0
+shader_parameter/depth_blend = 0.1
+shader_parameter/flare_ratio = 0.1
+shader_parameter/star_size = 5.0
+shader_parameter/twinkel_speed = 0.0
+shader_parameter/star_layer_count = 1
+
+[sub_resource type="Sky" id="Sky_vwlhd"]
+sky_material = SubResource("ShaderMaterial_j2hd5")
+radiance_size = 2
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_vwlhd")
+tonemap_white = 12.12
+sdfgi_energy = 0.0
+fog_enabled = true
+fog_sky_affect = 0.1
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_length = 30.0
+volumetric_fog_detail_spread = 1.31951
+adjustment_enabled = true

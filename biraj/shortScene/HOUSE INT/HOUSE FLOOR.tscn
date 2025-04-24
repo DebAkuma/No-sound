@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://deff3sc63plhn"]
+
+[ext_resource type="Texture2D" uid="uid://cnlwjw1735fag" path="res://biraj/models/village/Ip Country House/lp_country_house_17.jpg" id="1_ey0dt"]
+[ext_resource type="Texture2D" uid="uid://cwpepjxlei88y" path="res://biraj/models/village/Ip Country House/lp_country_house_18.png" id="2_4v2dx"]
+[ext_resource type="Texture2D" uid="uid://cw4pwmvhb16y5" path="res://biraj/models/village/Ip Country House/lp_country_house_19.png" id="3_k41qx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21vqo"]
+resource_name = "concrate"
+cull_mode = 2
+albedo_texture = ExtResource("1_ey0dt")
+metallic_texture = ExtResource("2_4v2dx")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_4v2dx")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_k41qx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6bb88"]
+material = SubResource("StandardMaterial3D_21vqo")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ttn8"]
+size = Vector3(2.017, 0.02, 2.014)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_6bb88")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00172424, -0.000350952, 0.000610352)
+shape = SubResource("BoxShape3D_1ttn8")

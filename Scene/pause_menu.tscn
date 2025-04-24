@@ -1,0 +1,807 @@
+[gd_scene load_steps=18 format=3 uid="uid://bmu3y06ug1h7y"]
+
+[ext_resource type="Script" path="res://Script/pause_menu.gd" id="1_tpfo1"]
+[ext_resource type="FontFile" uid="uid://b6v672xc1gqtt" path="res://Assets/Fronts/nightcore/Nightcore Demo.ttf" id="3_4nr4c"]
+[ext_resource type="FontFile" uid="uid://blhd7a2cnu5te" path="res://Assets/Fronts/the_macabre/The Macabre.otf" id="3_ikefy"]
+[ext_resource type="Script" path="res://Script/Setting/SettingOptions.gd" id="3_ji5as"]
+[ext_resource type="PackedScene" uid="uid://p4h4omgnjlci" path="res://Scene/iteam_list.tscn" id="5_6si8b"]
+[ext_resource type="FontFile" uid="uid://duf5igiw61a8u" path="res://Assets/Fronts/blood_crow/bloodcrowe.ttf" id="5_nfol8"]
+[ext_resource type="FontFile" uid="uid://kxl03wlq7v66" path="res://Assets/Fronts/PixelOperator8-Bold.ttf" id="6_j2s1f"]
+[ext_resource type="PackedScene" uid="uid://bfjt32ucocw6u" path="res://Scene/input_button.tscn" id="7_c73ue"]
+[ext_resource type="FontFile" uid="uid://vhnymwgp4mnc" path="res://Assets/Fronts/blood_crow/bloodcrow.ttf" id="7_yxa4e"]
+[ext_resource type="PackedScene" uid="uid://bfetc06sec8a1" path="res://Scene/install_sound.tscn" id="8_xhstk"]
+
+[sub_resource type="Animation" id="Animation_inj1f"]
+resource_name = "Blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4m28b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Saving:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["SAVING . . . . "]
+}
+
+[sub_resource type="Animation" id="Animation_1ho6m"]
+resource_name = "Saving"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Saving:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["SAVING . . . . ", "SAVING . . .", "SAVING . .", "SAVING .", "SAVING "]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jxka"]
+_data = {
+"Blur": SubResource("Animation_inj1f"),
+"RESET": SubResource("Animation_4m28b"),
+"Saving": SubResource("Animation_1ho6m")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axbdy"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gj88q"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b02to"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="pause_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tpfo1")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_5jxka")
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 84.0
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+current_tab = 0
+script = ExtResource("3_ji5as")
+
+[node name="Options" type="TabBar" parent="PanelContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Mission" type="Label" parent="PanelContainer/TabContainer/Options"]
+layout_mode = 2
+anchor_left = 0.068
+anchor_top = 0.048
+anchor_right = 0.295
+anchor_bottom = 0.204
+offset_left = -1.88
+offset_top = -0.136
+offset_right = 0.299988
+offset_bottom = 0.171997
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("3_4nr4c")
+theme_override_font_sizes/font_size = 60
+text = "Mission
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/TabContainer/Options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.377
+anchor_top = 0.199091
+anchor_right = 0.911
+anchor_bottom = 0.745
+offset_left = 0.179993
+offset_top = 0.151997
+offset_right = -0.260071
+offset_bottom = -0.215027
+theme_override_constants/separation = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="MissionTitle" type="Label" parent="PanelContainer/TabContainer/Options/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 50
+text = "Mission
+"
+
+[node name="MissionDesciption" type="Label" parent="PanelContainer/TabContainer/Options/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0.886275, 0, 1)
+theme_override_fonts/font = ExtResource("7_yxa4e")
+theme_override_font_sizes/font_size = 30
+text = "Mission
+"
+autowrap_mode = 3
+
+[node name="IteamBox" type="VBoxContainer" parent="PanelContainer/TabContainer/Options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.485
+anchor_top = 0.42
+anchor_right = 1.709
+anchor_bottom = 0.97
+offset_left = -0.100037
+offset_top = 0.0599823
+offset_right = 2.05994
+offset_bottom = 0.209961
+theme_override_constants/separation = 10
+
+[node name="IteamList" parent="PanelContainer/TabContainer/Options/IteamBox" instance=ExtResource("5_6si8b")]
+layout_mode = 2
+
+[node name="PauseOption" type="VBoxContainer" parent="PanelContainer/TabContainer/Options"]
+layout_mode = 2
+anchor_left = 0.056
+anchor_top = 0.46
+anchor_right = 0.276
+anchor_bottom = 0.951
+offset_left = 0.0399971
+offset_top = -0.220001
+offset_right = -0.160019
+offset_bottom = -0.257019
+size_flags_vertical = 8
+size_flags_stretch_ratio = 5.0
+theme_override_constants/separation = 20
+
+[node name="Resume" type="Button" parent="PanelContainer/TabContainer/Options/PauseOption"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_axbdy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gj88q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b02to")
+text = "Resume"
+
+[node name="Save Game" type="Button" parent="PanelContainer/TabContainer/Options/PauseOption"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_axbdy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gj88q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b02to")
+text = "save"
+
+[node name="Load Game" type="Button" parent="PanelContainer/TabContainer/Options/PauseOption"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_axbdy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gj88q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b02to")
+text = "Load"
+
+[node name="Reset_button" type="Button" parent="PanelContainer/TabContainer/Options/PauseOption"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_axbdy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gj88q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b02to")
+text = "RESET TO DEFAULT"
+
+[node name="Main Menu" type="Button" parent="PanelContainer/TabContainer/Options/PauseOption"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_axbdy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gj88q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b02to")
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="PanelContainer/TabContainer/Options/PauseOption"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_axbdy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gj88q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b02to")
+text = "Quit
+"
+
+[node name="Video" type="TabBar" parent="PanelContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/TabContainer/Video"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.043
+anchor_right = 0.048
+anchor_bottom = 0.043
+offset_left = 0.32
+offset_top = -0.101002
+offset_right = 609.32
+offset_bottom = 474.899
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="Resolution" type="Label" parent="PanelContainer/TabContainer/Video/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Resolution
+"
+
+[node name="ResolutionOption" type="OptionButton" parent="PanelContainer/TabContainer/Video/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j2s1f")
+theme_override_font_sizes/font_size = 20
+selected = 0
+item_count = 5
+popup/item_0/text = "1920 x 1080"
+popup/item_1/text = "1600 x 900"
+popup/item_1/id = 1
+popup/item_2/text = "1440 x 900"
+popup/item_2/id = 2
+popup/item_3/text = "1366 x 768"
+popup/item_3/id = 3
+popup/item_4/text = "1280 x 720"
+popup/item_4/id = 4
+
+[node name="DisplayMode" type="Label" parent="PanelContainer/TabContainer/Video/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Display Mode
+"
+
+[node name="DisplayModeOption" type="OptionButton" parent="PanelContainer/TabContainer/Video/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j2s1f")
+theme_override_font_sizes/font_size = 20
+selected = 0
+item_count = 4
+popup/item_0/text = "Fullscreen"
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+popup/item_2/text = "minimized"
+popup/item_2/id = 2
+popup/item_3/text = "maximized"
+popup/item_3/id = 3
+
+[node name="Vsync" type="Label" parent="PanelContainer/TabContainer/Video/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Vsync
+"
+
+[node name="VsyncOption" type="OptionButton" parent="PanelContainer/TabContainer/Video/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_j2s1f")
+theme_override_font_sizes/font_size = 20
+selected = 1
+item_count = 3
+popup/item_0/text = "Disabled"
+popup/item_1/text = "adaptive"
+popup/item_1/id = 1
+popup/item_2/text = "Enabled"
+popup/item_2/id = 2
+
+[node name="ShowFps" type="Label" parent="PanelContainer/TabContainer/Video/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Show FPS"
+
+[node name="ShowFpsOption" type="CheckButton" parent="PanelContainer/TabContainer/Video/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="MaxFps" type="Label" parent="PanelContainer/TabContainer/Video/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Max FPS"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/TabContainer/Video/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="MaxFps" type="HSlider" parent="PanelContainer/TabContainer/Video/GridContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 30.0
+max_value = 500.0
+value = 60.0
+
+[node name="Max" type="Label" parent="PanelContainer/TabContainer/Video/GridContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Max"
+
+[node name="Graphic" type="TabBar" parent="PanelContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/TabContainer/Graphic"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.043
+anchor_right = 0.958
+anchor_bottom = 0.731
+offset_top = -3.101
+offset_right = 0.719971
+offset_bottom = 0.28299
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="PRESET" type="Label" parent="PanelContainer/TabContainer/Graphic/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "PRESET
+"
+
+[node name="HBoxContainerPreset" type="HBoxContainer" parent="PanelContainer/TabContainer/Graphic/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 10
+
+[node name="GPUHigh" type="Button" parent="PanelContainer/TabContainer/Graphic/GridContainer/HBoxContainerPreset"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+text = "High"
+
+[node name="GPUMid" type="Button" parent="PanelContainer/TabContainer/Graphic/GridContainer/HBoxContainerPreset"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+text = "Mid"
+
+[node name="GPULow" type="Button" parent="PanelContainer/TabContainer/Graphic/GridContainer/HBoxContainerPreset"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+text = "Soft"
+
+[node name="Bloom" type="Label" parent="PanelContainer/TabContainer/Graphic/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Bloom"
+
+[node name="BloomOption" type="CheckButton" parent="PanelContainer/TabContainer/Graphic/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Brightness" type="Label" parent="PanelContainer/TabContainer/Graphic/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Brightness"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/TabContainer/Graphic/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Brightness" type="HSlider" parent="PanelContainer/TabContainer/Graphic/GridContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 2.0
+step = 0.01
+
+[node name="Brightness_Label" type="Label" parent="PanelContainer/TabContainer/Graphic/GridContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SDFGI" type="Label" parent="PanelContainer/TabContainer/Graphic/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "SDFGI"
+
+[node name="SDFGIOption" type="CheckButton" parent="PanelContainer/TabContainer/Graphic/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="ReflectionLight" type="Label" parent="PanelContainer/TabContainer/Graphic/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 25
+text = "REFLECTION
+"
+
+[node name="ReflectionOption" type="CheckButton" parent="PanelContainer/TabContainer/Graphic/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Audio" type="TabBar" parent="PanelContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/TabContainer/Audio"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.044
+anchor_right = 0.026
+anchor_bottom = 0.044
+offset_left = -0.16
+offset_top = 0.291998
+offset_right = 623.84
+offset_bottom = 349.292
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="PRESET" type="Label" parent="PanelContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "PRESET
+"
+
+[node name="HBoxContainerPreset" type="HBoxContainer" parent="PanelContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 10
+
+[node name="High" type="Button" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerPreset"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+text = "High"
+
+[node name="Mid" type="Button" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerPreset"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+text = "Mid"
+
+[node name="Low" type="Button" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerPreset"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+text = "Low"
+
+[node name="Mute" type="Button" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerPreset"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_ikefy")
+theme_override_font_sizes/font_size = 30
+text = "Mute"
+
+[node name="Master Volume" type="Label" parent="PanelContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Master Volume
+"
+
+[node name="HBoxContainerMaster" type="HBoxContainer" parent="PanelContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 10
+
+[node name="MasterV" type="HSlider" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerMaster"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -80.0
+max_value = 6.0
+
+[node name="MasterV_Label" type="Label" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerMaster"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "80%"
+
+[node name="Music  Volume" type="Label" parent="PanelContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Music Volume
+"
+
+[node name="HBoxContainerMusic" type="HBoxContainer" parent="PanelContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 10
+
+[node name="MusicV" type="HSlider" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerMusic"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -80.0
+max_value = 6.0
+
+[node name="MusicV_Label" type="Label" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerMusic"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Speech  Volume" type="Label" parent="PanelContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Speech Volume
+"
+
+[node name="HBoxContainerSpeech" type="HBoxContainer" parent="PanelContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 10
+
+[node name="SpeechV" type="HSlider" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerSpeech"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -80.0
+max_value = 6.0
+
+[node name="SpeechV_Label" type="Label" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerSpeech"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Sound Effects" type="Label" parent="PanelContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Sound Effects
+"
+
+[node name="HBoxContainerSfx" type="HBoxContainer" parent="PanelContainer/TabContainer/Audio/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 10
+
+[node name="SFX" type="HSlider" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerSfx"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -80.0
+max_value = 6.0
+
+[node name="SFX_Label" type="Label" parent="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerSfx"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Control" type="TabBar" parent="PanelContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/TabContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.056
+anchor_right = 0.924
+anchor_bottom = 0.904
+offset_left = 0.199999
+offset_top = 0.00799942
+offset_right = 0.159973
+offset_bottom = 0.271973
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Container" type="VBoxContainer" parent="PanelContainer/TabContainer/Control/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Container2" type="HBoxContainer" parent="PanelContainer/TabContainer/Control/ScrollContainer/Container"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Mouse_Sensy" type="Label" parent="PanelContainer/TabContainer/Control/ScrollContainer/Container/Container2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_nfol8")
+theme_override_font_sizes/font_size = 30
+text = "Mouse Sensitivity
+"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/TabContainer/Control/ScrollContainer/Container/Container2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Mouse_Sensy" type="HSlider" parent="PanelContainer/TabContainer/Control/ScrollContainer/Container/Container2/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 0.9
+step = 0.1
+
+[node name="seny" type="Label" parent="PanelContainer/TabContainer/Control/ScrollContainer/Container/Container2/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Xx"
+
+[node name="ActionList" type="VBoxContainer" parent="PanelContainer/TabContainer/Control/ScrollContainer/Container"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="InputButton" parent="PanelContainer/TabContainer/Control/ScrollContainer/Container/ActionList" instance=ExtResource("7_c73ue")]
+layout_mode = 2
+
+[node name="Saving" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_yxa4e")
+theme_override_font_sizes/font_size = 20
+text = "SAVING . . . . "
+metadata/_edit_use_anchors_ = true
+
+[node name="Install_Sound" parent="." instance=ExtResource("8_xhstk")]
+root_path = NodePath("..")
+
+[connection signal="pressed" from="PanelContainer/TabContainer/Options/PauseOption/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Options/PauseOption/Save Game" to="." method="_on_save_game_pressed"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Options/PauseOption/Load Game" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Options/PauseOption/Reset_button" to="PanelContainer/TabContainer" method="_on_reset_button_pressed"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Options/PauseOption/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Options/PauseOption/Quit" to="." method="_on_quit_pressed"]
+[connection signal="item_selected" from="PanelContainer/TabContainer/Video/GridContainer/ResolutionOption" to="PanelContainer/TabContainer" method="_on_resolution_option_item_selected"]
+[connection signal="item_selected" from="PanelContainer/TabContainer/Video/GridContainer/DisplayModeOption" to="PanelContainer/TabContainer" method="_on_display_mode_option_item_selected"]
+[connection signal="item_selected" from="PanelContainer/TabContainer/Video/GridContainer/VsyncOption" to="PanelContainer/TabContainer" method="_on_vsync_option_item_selected"]
+[connection signal="toggled" from="PanelContainer/TabContainer/Video/GridContainer/ShowFpsOption" to="PanelContainer/TabContainer" method="_on_show_fps_option_toggled"]
+[connection signal="value_changed" from="PanelContainer/TabContainer/Video/GridContainer/HBoxContainer/MaxFps" to="PanelContainer/TabContainer" method="_on_max_fps_value_changed"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Graphic/GridContainer/HBoxContainerPreset/GPUHigh" to="PanelContainer/TabContainer" method="_on_gpu_high_pressed"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Graphic/GridContainer/HBoxContainerPreset/GPUMid" to="PanelContainer/TabContainer" method="_on_gpu_mid_pressed"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Graphic/GridContainer/HBoxContainerPreset/GPULow" to="PanelContainer/TabContainer" method="_on_gpu_low_pressed"]
+[connection signal="toggled" from="PanelContainer/TabContainer/Graphic/GridContainer/BloomOption" to="PanelContainer/TabContainer" method="_on_bloom_option_toggled"]
+[connection signal="value_changed" from="PanelContainer/TabContainer/Graphic/GridContainer/HBoxContainer2/Brightness" to="PanelContainer/TabContainer" method="_on_brightness_value_changed"]
+[connection signal="toggled" from="PanelContainer/TabContainer/Graphic/GridContainer/SDFGIOption" to="PanelContainer/TabContainer" method="_on_sdfgi_option_toggled"]
+[connection signal="toggled" from="PanelContainer/TabContainer/Graphic/GridContainer/ReflectionOption" to="PanelContainer/TabContainer" method="_on_reflection_option_toggled"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerPreset/High" to="PanelContainer/TabContainer" method="_on_high_pressed"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerPreset/Mid" to="PanelContainer/TabContainer" method="_on_mid_pressed"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerPreset/Low" to="PanelContainer/TabContainer" method="_on_low_pressed"]
+[connection signal="pressed" from="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerPreset/Mute" to="PanelContainer/TabContainer" method="_on_mute_pressed"]
+[connection signal="value_changed" from="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerMaster/MasterV" to="PanelContainer/TabContainer" method="_on_master_v_value_changed"]
+[connection signal="value_changed" from="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerMusic/MusicV" to="PanelContainer/TabContainer" method="_on_music_v_value_changed"]
+[connection signal="value_changed" from="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerSpeech/SpeechV" to="PanelContainer/TabContainer" method="_on_speech_v_value_changed"]
+[connection signal="value_changed" from="PanelContainer/TabContainer/Audio/GridContainer/HBoxContainerSfx/SFX" to="PanelContainer/TabContainer" method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="PanelContainer/TabContainer/Control/ScrollContainer/Container/Container2/HBoxContainer3/Mouse_Sensy" to="PanelContainer/TabContainer" method="_on_mouse_sensy_value_changed"]

@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://6mbriyo78c0r"]
+
+[ext_resource type="PackedScene" uid="uid://c26cm52mshjs1" path="res://biraj/All Vaild Scene For Use/tree_1.tscn" id="4_g1yo8"]
+[ext_resource type="PackedScene" uid="uid://dsg6y4shwkhi4" path="res://biraj/All Vaild Scene For Use/tree_2.tscn" id="5_05rm1"]
+[ext_resource type="PackedScene" uid="uid://b8lj06dowqsrv" path="res://biraj/shortScene/Rocks/rock_2.tscn" id="5_43wi4"]
+[ext_resource type="PackedScene" uid="uid://b3mxg0temitpt" path="res://biraj/shortScene/Rocks/rock_1.tscn" id="6_mv8au"]
+[ext_resource type="ArrayOccluder3D" uid="uid://bavi68f78r6q8" path="res://Assets/Occlusion for everything/CIRCLE TREE.occ" id="9_wvltr"]
+
+[node name="Chunk" type="Node3D"]
+
+[node name="Tree1" parent="." instance=ExtResource("4_g1yo8")]
+transform = Transform3D(0.1314, 0, 0, 0, -5.74369e-09, -0.1314, 0, 0.1314, -5.74369e-09, 2.684, 0, 3.033)
+
+[node name="Tree4" parent="." instance=ExtResource("4_g1yo8")]
+transform = Transform3D(0.0738186, 0, 0, 0, -3.22671e-09, -0.0738186, 0, 0.0738186, -3.22671e-09, -3.23516, -8.10903e-08, 2.66315)
+
+[node name="Tree5" parent="." instance=ExtResource("4_g1yo8")]
+transform = Transform3D(0.225691, 0, 0, 0, -9.86526e-09, -0.225691, 0, 0.225691, -9.86526e-09, -0.247499, 1.49413e-07, -3.41816)
+
+[node name="Tree2" parent="." instance=ExtResource("5_05rm1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.32053)
+
+[node name="Tree3" parent="." instance=ExtResource("5_05rm1")]
+transform = Transform3D(1.93699, 0, 0, 0, 1.93699, 0, 0, 0, 1.93699, -3.36, 0, 2.44264)
+
+[node name="Tree7" parent="." instance=ExtResource("5_05rm1")]
+transform = Transform3D(1.93699, 0, 0, 0, 1.93699, 0, 0, 0, 1.93699, -3.70875, 0, -2.17869)
+
+[node name="Rock1" parent="." instance=ExtResource("6_mv8au")]
+transform = Transform3D(0.04, 0, 0, 0, 0.0207193, -0.0342157, 0, 0.0342157, 0.0207193, -1.37595, 0, -0.0859442)
+visibility_range_end = 100.0
+visibility_range_end_margin = 100.0
+visibility_range_fade_mode = 2
+
+[node name="Rock4" parent="." instance=ExtResource("6_mv8au")]
+transform = Transform3D(0.04, 0, 0, 0, 0.0207193, -0.0342157, 0, 0.0342157, 0.0207193, 1.29845, 0, -0.0859442)
+visibility_range_end = 100.0
+visibility_range_end_margin = 100.0
+visibility_range_fade_mode = 2
+
+[node name="Rock6" parent="." instance=ExtResource("6_mv8au")]
+transform = Transform3D(0.04, 0, 0, 0, 0.0207193, -0.0342157, 0, 0.0342157, 0.0207193, -2.47438, 0, -3.13691)
+visibility_range_end = 100.0
+visibility_range_end_margin = 100.0
+visibility_range_fade_mode = 2
+
+[node name="Rock5" parent="." instance=ExtResource("6_mv8au")]
+transform = Transform3D(0.04, 0, 0, 0, 0.0207193, -0.0342157, 0, 0.0342157, 0.0207193, 1.29845, 0, -1.29673)
+visibility_range_end = 100.0
+visibility_range_end_margin = 100.0
+visibility_range_fade_mode = 2
+
+[node name="Rock2" parent="." instance=ExtResource("5_43wi4")]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, -3.25876, 0, 2.26578)
+visibility_range_end = 100.0
+visibility_range_end_margin = 100.0
+visibility_range_fade_mode = 2
+
+[node name="Rock3" parent="." instance=ExtResource("5_43wi4")]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0.565554, 0, 2.26578)
+visibility_range_end = 100.0
+visibility_range_end_margin = 100.0
+visibility_range_fade_mode = 2
+
+[node name="Rock7" parent="." instance=ExtResource("5_43wi4")]
+transform = Transform3D(0.04, 0, 0, 0, 0.0275817, -0.0289698, 0, 0.0289698, 0.0275817, 0.565554, 0, -3.48458)
+visibility_range_end = 100.0
+visibility_range_end_margin = 100.0
+visibility_range_fade_mode = 2
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("9_wvltr")

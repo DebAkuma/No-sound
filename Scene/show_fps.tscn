@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://88h24rkci7h5"]
+
+[ext_resource type="Script" path="res://Script/Setting/show_fps.gd" id="1_lmo73"]
+
+[node name="FpsLabel" type="Label"]
+offset_right = 92.0
+offset_bottom = 40.0
+script = ExtResource("1_lmo73")

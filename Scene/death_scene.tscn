@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6nnd4oif32ie"]
+
+[ext_resource type="Script" path="res://Script/DeathScene.gd" id="1_g7s8k"]
+[ext_resource type="FontFile" uid="uid://blhd7a2cnu5te" path="res://Assets/Fronts/the_macabre/The Macabre.otf" id="2_so332"]
+[ext_resource type="FontFile" uid="uid://vhnymwgp4mnc" path="res://Assets/Fronts/blood_crow/bloodcrow.ttf" id="3_1l2mu"]
+
+[node name="DeathScene" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g7s8k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.815686, 0, 0.121569, 0.0627451)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.348
+anchor_top = 0.258
+anchor_right = 0.652
+anchor_bottom = 0.42
+offset_left = 0.103973
+offset_top = -0.184006
+offset_right = -0.104004
+offset_bottom = -0.160004
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_so332")
+theme_override_font_sizes/font_size = 100
+text = "You Have Died.
+"
+
+[node name="LoadGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.435
+anchor_top = 0.565
+anchor_right = 0.569
+anchor_bottom = 0.633
+offset_left = -0.120026
+offset_top = -0.119995
+offset_right = 0.511963
+offset_bottom = -0.184021
+theme_override_fonts/font = ExtResource("3_1l2mu")
+theme_override_font_sizes/font_size = 30
+text = "Load Game"
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.431
+anchor_top = 0.664
+anchor_right = 0.578
+anchor_bottom = 0.731
+offset_left = 0.487976
+offset_top = -0.272034
+offset_right = 0.143982
+offset_bottom = 0.311981
+theme_override_fonts/font = ExtResource("3_1l2mu")
+theme_override_font_sizes/font_size = 30
+text = "Tile Screen
+"
+
+[connection signal="pressed" from="LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

@@ -1,0 +1,58 @@
+[gd_resource type="Terrain3DAssets" load_steps=18 format=3 uid="uid://dwvy4solovh84"]
+
+[ext_resource type="Texture2D" uid="uid://ctdbq68dk6qjb" path="res://Assets/terrain3d/Textures/Sand/sand_alpha_height.png" id="1_wbir6"]
+[ext_resource type="Texture2D" uid="uid://bvdds5x257tnm" path="res://Assets/terrain3d/Textures/Sand/packed_sand_normal_roughness.png" id="2_jf7un"]
+[ext_resource type="Texture2D" uid="uid://b2kadfxym5gf5" path="res://Assets/terrain3d/Textures/Grass/packed_albedo_height.png" id="3_057xy"]
+[ext_resource type="Texture2D" uid="uid://salqw8lgh7gt" path="res://Assets/terrain3d/Textures/Grass/packed_normal_roughness.png" id="4_viek3"]
+[ext_resource type="Texture2D" uid="uid://qcltexuwrnmf" path="res://Assets/terrain3d/Textures/Ground/packed_albedo_height.png" id="5_pwxgw"]
+[ext_resource type="Texture2D" uid="uid://bhdimp5p12vox" path="res://Assets/terrain3d/Textures/Ground/packed_normal_roughness.png" id="6_3vuiq"]
+[ext_resource type="Texture2D" uid="uid://dsoi352x75svy" path="res://Assets/terrain3d/Textures/Rock/packed_albedo_height.png" id="7_vkyc1"]
+[ext_resource type="Texture2D" uid="uid://r2x4e66pvw3w" path="res://Assets/terrain3d/Textures/Rock/packed_normal_roughness.png" id="8_f31un"]
+[ext_resource type="Texture2D" uid="uid://ccal80aopbgtq" path="res://Assets/terrain3d/Textures/Road/packed_albedo_height.png" id="9_ckk7g"]
+[ext_resource type="Texture2D" uid="uid://lqewaek6333a" path="res://Assets/terrain3d/Textures/Road/packed_normal_roughness.png" id="10_xiecm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16885"]
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_qwnyx"]
+height_offset = 0.5
+density = 10.0
+material_override = SubResource("StandardMaterial3D_16885")
+generated_type = 1
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_8cfe2"]
+name = "packed_sand_normal_roughness"
+albedo_texture = ExtResource("1_wbir6")
+normal_texture = ExtResource("2_jf7un")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_wq0d2"]
+name = "packed_albedo_height"
+id = 1
+albedo_texture = ExtResource("3_057xy")
+normal_texture = ExtResource("4_viek3")
+detiling = 0.319
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_rqpcn"]
+name = "packed_albedo_height"
+id = 2
+albedo_texture = ExtResource("5_pwxgw")
+normal_texture = ExtResource("6_3vuiq")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_1s8gu"]
+name = "packed_albedo_height"
+id = 3
+albedo_texture = ExtResource("7_vkyc1")
+normal_texture = ExtResource("8_f31un")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_cu2m8"]
+name = "packed_albedo_height"
+id = 4
+albedo_texture = ExtResource("9_ckk7g")
+normal_texture = ExtResource("10_xiecm")
+
+[resource]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_qwnyx")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_8cfe2"), SubResource("Terrain3DTextureAsset_wq0d2"), SubResource("Terrain3DTextureAsset_rqpcn"), SubResource("Terrain3DTextureAsset_1s8gu"), SubResource("Terrain3DTextureAsset_cu2m8")])

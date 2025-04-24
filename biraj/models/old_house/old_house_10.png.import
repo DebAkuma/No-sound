@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dwi04xuyetvki"
+path.s3tc="res://.godot/imported/old_house_10.png-a6c11d85b3d3c69dfcbb5aa22e742fa2.s3tc.ctex"
+path.etc2="res://.godot/imported/old_house_10.png-a6c11d85b3d3c69dfcbb5aa22e742fa2.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "616d658d50acc675644e5284a991ca4e"
+}
+
+[deps]
+
+source_file="res://biraj/models/old_house/old_house_10.png"
+dest_files=["res://.godot/imported/old_house_10.png-a6c11d85b3d3c69dfcbb5aa22e742fa2.s3tc.ctex", "res://.godot/imported/old_house_10.png-a6c11d85b3d3c69dfcbb5aa22e742fa2.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=8
+roughness/src_normal="res://biraj/models/A small house/old_house_11.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

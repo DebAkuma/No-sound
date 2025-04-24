@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://qck5mrhafkwf"
+path.s3tc="res://.godot/imported/Adidas store and factory _Image_4_16.png-cfaddfc13daeb757a2fc5fd0f4238375.s3tc.ctex"
+path.etc2="res://.godot/imported/Adidas store and factory _Image_4_16.png-cfaddfc13daeb757a2fc5fd0f4238375.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "ca4ae55d8826d86e85aff88e1847ad5c"
+}
+
+[deps]
+
+source_file="res://biraj/models/Adidas store and factory/Adidas store and factory _Image_4_16.png"
+dest_files=["res://.godot/imported/Adidas store and factory _Image_4_16.png-cfaddfc13daeb757a2fc5fd0f4238375.s3tc.ctex", "res://.godot/imported/Adidas store and factory _Image_4_16.png-cfaddfc13daeb757a2fc5fd0f4238375.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=8
+roughness/src_normal="res://biraj/models/Adidas store and factory/Adidas store and factory _Image_5_15.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

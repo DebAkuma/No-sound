@@ -1,0 +1,33 @@
+~ afterentringisland
+Catherine: <afterEnteringIsland1> Why is this island so dark? I can barely see anything beyond a few feet ahead. It’s a good thing I always carry a torch.
+Catherine: <Cathrine1> I should check inside that house. Maybe there’s something useful for this adventure.
+do Global.questTitle = "Check The House From Inside"
+do Global.questDetails = "You just reach the island. In front of you a house. As an adventure you should check out"
+=> END
+
+~ afterPickUpBook
+Catherine: <aftertakingbookpart1> Hmm, what’s in this diary? Seems like it was written by a previous hunter. It details some of their experiences on this mysterious island. Apparently, there’s a monster here, one that’s been a nightmare for hunters like me.
+Catherine: <aftertakingbookpart2> The diary mentions that the monster doesn’t have great eyesight but has an acute sense of hearing. I’ll need to be extra careful about making any noise when it’s nearby.
+Catherine: <aftertakingbookpart3> It also talks about some gemstones—six of them, to be exact—needed to activate a device.Such a drag
+do Global.questTitle = "CheckOut the House carefully "
+do Global.questDetails = "Previous hunter house maybe we can find previous hunter weapon"
+
+=> END
+
+
+~ AboutStoneRune
+Catherine: <Cathrine1> The Stone Rune is an ancient artifact, a remnant of forgotten technology designed to seal away the monster that haunts this island.
+Catherine: <Cathrine1> To activate its sealing power, all six gemstones must be gathered and placed correctly. Without it, there is no hope of stopping the creature.
+do Global.questTitle = "Search For More Clues "
+do Global.questDetails = "I think i need to search the island more throughly.While avoiding the monster"
+=> END
+
+~ afterPickingFirstGemstone
+Catherine: <Cathrine1> This gemstone seems oddly familiar, like it’s part of something bigger. 
+Catherine: <Cathrine1> On closer inspection, it has markings that suggest it fits into the Stone Rune.
+Catherine: <Cathrine1> The rune itself has six distinct spots—could there be five more gemstones scattered across the island?
+Catherine: <Cathrine1> What is the connection between these stones, and why are they so important?
+do Global.questTitle = "Collect all 6 Gemstone "
+do Global.questDetails = "one is already collected need to find other 5"
+=> END
+

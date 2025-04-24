@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bpgf260dqogs6"
+path="res://.godot/imported/Quest_line.dialogue-17d1f09d67e5e484b8fb02f3aa7c3006.tres"
+
+[deps]
+
+source_file="res://Assets/dialogue/Quest_line.dialogue"
+dest_files=["res://.godot/imported/Quest_line.dialogue-17d1f09d67e5e484b8fb02f3aa7c3006.tres"]
+
+[params]
+
+defaults=true

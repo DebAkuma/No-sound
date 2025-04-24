@@ -1,0 +1,10 @@
+
+~ First_cutscene
+Catherine: <Cathrine1> As far as assignments go, this one's a bit different,Usually, it's forests, caves, or the odd abandoned castle. But an island? That's new
+Catherine: <Cathrine2> Catherine, the island hunter. 
+Catherine: <Cathrine3> Sounds almost romantic, doesn't it? Like something out of an old legend. But this is no storybook, and I'm no hero. Just a monster hunter with a job to do. The guild said something about a creature terrorizing the locals. Something big enough to warrant a boat ride to the middle of nowhere.
+Catherine: <Cathrine4> Maybe this one will be different,Maybe it's not just another beast to slay. Maybe there's more to the story. But then again, Catherine, when has it ever been simple?
+Catherine: <Cathrine5> Still, a boat to an island for a single monster? Sounds like overkill,But if it's dangerous enough to warrant all this, maybe it's worth the trip. A challenge, perhaps? Something to test my skills?
+Catherine: <Cathrine6> Well, whatever it is, Catherine's ready, No matter what waits for me on that island, I'll face it head-on. Another hunt, another challenge. Let's see what this one's all about.
+do end_part()
+=> END

@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c11i7l1rg3y78"
+path="res://.godot/imported/lp_country_house_39.png-011b64f0a9d0f495228807a968139d8c.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "5eb32c0ca5e0f40264733fcf630d2345"
+}
+
+[deps]
+
+source_file="res://biraj/models/village/Ip Country House/lp_country_house_39.png"
+dest_files=["res://.godot/imported/lp_country_house_39.png-011b64f0a9d0f495228807a968139d8c.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbrckpau3ctff"
+path="res://.godot/imported/BackgroundSFx.mp3-75a0d99f8723b4d3e558487aa5d60ff0.mp3str"
+
+[deps]
+
+source_file="res://Audio/First CutScence/BackgroundSFx.mp3"
+dest_files=["res://.godot/imported/BackgroundSFx.mp3-75a0d99f8723b4d3e558487aa5d60ff0.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

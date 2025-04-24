@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://0eoapp1xggrh"
+path.s3tc="res://.godot/imported/A set of horse rider _Image_14.png-15814adb13f1d2978efe1896fac5ed30.s3tc.ctex"
+path.etc2="res://.godot/imported/A set of horse rider _Image_14.png-15814adb13f1d2978efe1896fac5ed30.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "50612a44e04ac65a4182aaad1b4d770f"
+}
+
+[deps]
+
+source_file="res://biraj/models/done/A Set Of Horse Rider/A set of horse rider _Image_14.png"
+dest_files=["res://.godot/imported/A set of horse rider _Image_14.png-15814adb13f1d2978efe1896fac5ed30.s3tc.ctex", "res://.godot/imported/A set of horse rider _Image_14.png-15814adb13f1d2978efe1896fac5ed30.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://biraj/models/A small house/Is set up Four types house/A set of horse rider _Image_14.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

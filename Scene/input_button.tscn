@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfjt32ucocw6u"]
+
+[ext_resource type="FontFile" uid="uid://duf5igiw61a8u" path="res://Assets/Fronts/blood_crow/bloodcrowe.ttf" id="1_ouddr"]
+
+[node name="InputButton" type="Button"]
+custom_minimum_size = Vector2(0, 40)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.073
+offset_bottom = -0.304005
+grow_horizontal = 2
+size_flags_vertical = 4
+focus_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.022
+anchor_right = 0.976
+anchor_bottom = 1.0
+offset_left = -0.344002
+offset_right = -0.352051
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LabelAction" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ouddr")
+theme_override_font_sizes/font_size = 30
+text = "Action NAME"
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="LabelInput" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ouddr")
+theme_override_font_sizes/font_size = 30
+text = "KEY INPUT"

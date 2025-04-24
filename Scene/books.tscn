@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://ngtupd25g48"]
+
+[ext_resource type="ArrayMesh" uid="uid://cn4ib8qbgqcey" path="res://Assets/Mesh/Book_mesh.tres" id="1_a10x3"]
+
+[node name="Books" type="Node3D"]
+
+[node name="Object_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0343317, 0.00260431, -5.78273e-19, 0, 7.64507e-18, 0.0344303, 0.00260431, -0.0343317, 7.62316e-18, -0.0183858, -0.0187507, 1)
+mesh = ExtResource("1_a10x3")
+skeleton = NodePath("")
+
+[node name="Object_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0332133, -0.00907306, 2.01462e-18, 0, 7.64507e-18, 0.0344303, -0.00907306, -0.0332133, 7.37484e-18, 0.284712, 0.278981, 1)
+mesh = ExtResource("1_a10x3")
+skeleton = NodePath("")
+
+[node name="Object_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0344303, 0, 0, 0, 7.64507e-18, 0.0344303, 0, -0.0344303, 7.64507e-18, -0.0183858, 0.564533, 1)
+mesh = ExtResource("1_a10x3")
+skeleton = NodePath("")
+
+[node name="Object_6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0218516, -5.90802e-18, -0.0266074, 0.0266074, 4.85204e-18, 0.0218516, 0, -0.0344303, 7.64507e-18, -0.661884, -0.0739329, 1)
+mesh = ExtResource("1_a10x3")
+skeleton = NodePath("")
+
+[node name="Object_7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00474476, -7.57212e-18, -0.0341018, 0.0341018, -1.05355e-18, -0.00474476, 0, -0.0344303, 7.64506e-18, 1.5437, 0.00443649, 1)
+mesh = ExtResource("1_a10x3")
+skeleton = NodePath("")
+
+[node name="Object_8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.021724, 0.00196875, 0.0266391, 0.00124423, 0.034374, -0.00152574, -0.0266827, 0, -0.0217596, -1.06853, -0.0194233, -0.52964)
+mesh = ExtResource("1_a10x3")
+skeleton = NodePath("")
+
+[node name="Object_9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0216991, -0.00256416, 0.0266086, -0.00162052, 0.0343347, 0.00198717, -0.0266827, 0, -0.0217596, -1.26171, -0.0194233, -0.361764)
+mesh = ExtResource("1_a10x3")
+skeleton = NodePath("")
+
+[node name="Object_10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0217596, 0, 0.0266827, 0, 0.0344303, 0, -0.0266827, 0, -0.0217596, -1.60498, -0.0194233, -0.180222)
+mesh = ExtResource("1_a10x3")
+skeleton = NodePath("")
+
+[node name="Object_11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0217596, 0, 0.0266827, 0, 0.0344303, 0, -0.0266827, 0, -0.0217596, -0.748343, -0.0194233, -0.696201)
+mesh = ExtResource("1_a10x3")
+skeleton = NodePath("")
+
+[node name="Object_12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0168475, 0.0300268, -1.31251e-09, 0, -1.505e-09, -0.0344303, -0.0300268, 0.0168475, -7.36427e-10, -1.05583, 0.351251, -2.01548)
+mesh = ExtResource("1_a10x3")
+skeleton = NodePath("")

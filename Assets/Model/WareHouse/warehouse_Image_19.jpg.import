@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://84fb1t8uc8t7"
+path.s3tc="res://.godot/imported/warehouse_Image_19.jpg-cdb1596187574d91693839fe28d39c59.s3tc.ctex"
+path.etc2="res://.godot/imported/warehouse_Image_19.jpg-cdb1596187574d91693839fe28d39c59.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "4302030fb9ae426e79e976e39741ffe0"
+}
+
+[deps]
+
+source_file="res://Assets/Model/WareHouse/warehouse_Image_19.jpg"
+dest_files=["res://.godot/imported/warehouse_Image_19.jpg-cdb1596187574d91693839fe28d39c59.s3tc.ctex", "res://.godot/imported/warehouse_Image_19.jpg-cdb1596187574d91693839fe28d39c59.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Assets/Terrain/Model/WareHouse/warehouse_Image_19.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

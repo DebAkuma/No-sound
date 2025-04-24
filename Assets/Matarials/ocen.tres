@@ -1,0 +1,63 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://3vdlb4htctwe"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/ocean.gdshader" id="1_a7sit"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ellnu"]
+noise_type = 3
+seed = -1
+frequency = 0.0195
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bodps"]
+in_3d_space = true
+seamless = true
+as_normal_map = true
+bump_strength = 15.0
+noise = SubResource("FastNoiseLite_ellnu")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4u8jp"]
+noise_type = 3
+seed = 10
+frequency = 0.0057
+offset = Vector3(-212.77, 0, 0)
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uieeg"]
+seamless = true
+seamless_blend_skirt = 0.41
+as_normal_map = true
+bump_strength = 10.0
+noise = SubResource("FastNoiseLite_4u8jp")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2i7ob"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vq4cm"]
+seamless = true
+noise = SubResource("FastNoiseLite_2i7ob")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_a7sit")
+shader_parameter/albedo = Color(1.2514e-06, 0.378347, 0.504707, 1)
+shader_parameter/albedo2 = Color(1.2514e-06, 0.378347, 0.504707, 1)
+shader_parameter/color_deep = Color(0.239216, 0.556863, 0.615686, 0.368627)
+shader_parameter/color_shallow = Color(0, 0.552941, 0.65098, 0.921569)
+shader_parameter/metallic = 0.62
+shader_parameter/roughness = 0.08
+shader_parameter/wave_time = 0.0
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/wave_2_direction = Vector2(0, 1)
+shader_parameter/time_scale = 0.025
+shader_parameter/wave_speed = 2.0
+shader_parameter/noise_scale = 10.0
+shader_parameter/height_scale = 1.0
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = -0.75
+shader_parameter/edge_scale = 0.1
+shader_parameter/near = 0.5
+shader_parameter/far = 100.0
+shader_parameter/edge_color = Color(0.051971, 0.051971, 0.051971, 1)
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_bodps")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_uieeg")
+shader_parameter/wave = SubResource("NoiseTexture2D_vq4cm")

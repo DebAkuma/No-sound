@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://p4h4omgnjlci"]
+
+[ext_resource type="FontFile" uid="uid://blhd7a2cnu5te" path="res://Assets/Fronts/the_macabre/The Macabre.otf" id="1_1wgpu"]
+
+[node name="IteamList" type="HBoxContainer"]
+theme_override_constants/separation = 30
+
+[node name="ItemName" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_1wgpu")
+theme_override_font_sizes/font_size = 30
+text = "Stone Plate
+"
+
+[node name="ItemCount" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_1wgpu")
+theme_override_font_sizes/font_size = 30
+text = "+1
+"
