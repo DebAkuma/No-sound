@@ -77,10 +77,10 @@ You arrive on a mysterious island to hunt a terrifying creature. But the hunter 
 
 ## 📫 Contact & Feedback
 
-Created by \ Deb halder,Biraj Samaddar , Subhronil Maji
+Created by Deb halder,Biraj Samaddar , Subhronil Maji
 Questions, bug reports, or feedback?
-📧 \debhalder614@gmail.com
-🎮 \
+📧 debhalder614@gmail.com
+🎮 
 
 ---
 
