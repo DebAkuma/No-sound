@@ -35,7 +35,7 @@ You arrive on a mysterious island to hunt a terrifying creature. But the hunter 
 | Move        | WASD           |
 | Interact    | E              |
 | Crouch      | Ctrl           |
-| Inventory   | Tab            |
+| Menu        | Esc            |
 | Run         | Left Shift     |
 | Use Item    | Left Click     |
 | Speak (Mic) | Your Voice 🎙️  |
