@@ -1,4 +1,4 @@
-  NO SOUND
+#  NO SOUND
 
 **NO SOUND** is a first-person, story-driven horror game where even the faintest noise can lead to your demise. Speak, breathe, or panic — and they'll find you.
 
